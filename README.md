@@ -1,4 +1,4 @@
-# flutterdemoapp
+# Flavr
 
 A new Flutter application.
 

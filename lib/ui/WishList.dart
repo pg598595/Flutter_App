@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:flutterdemoapp/model/ItemDetailsFeed.dart';
-import 'package:flutterdemoapp/utils/CustomNavigation.dart';
-import 'package:flutterdemoapp/utils/Permissions.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/model/ItemDetailsFeed.dart';
+import 'package:Flavr/utils/CustomNavigation.dart';
+import 'package:Flavr/utils/Permissions.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

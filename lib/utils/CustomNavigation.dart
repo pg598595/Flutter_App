@@ -1,5 +1,5 @@
 
-import 'package:flutterdemoapp/ui/DetailScreen.dart';
+import 'package:Flavr/ui/DetailScreen.dart';
 import 'package:flutter/material.dart';
 
 Future navigateToSubPage(context, int, list) async {

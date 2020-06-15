@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:flutterdemoapp/apis/addRecipeAPI.dart';
-import 'package:flutterdemoapp/apis/loginAPI.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/apis/addRecipeAPI.dart';
+import 'package:Flavr/apis/loginAPI.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemoapp/model/ItemDetailsFeed.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/model/ItemDetailsFeed.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 
 Future HomeFeedAPI(BuildContext context) async {
   ItemDetailsFeed itemDetailsFeed;

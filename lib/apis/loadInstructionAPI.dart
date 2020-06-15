@@ -3,8 +3,8 @@ import 'dart:io';
 
 
 import 'package:dio/dio.dart';
-import 'package:flutterdemoapp/model/InstructionDetailsFeed.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/model/InstructionDetailsFeed.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 
 class LoadingInstructionAPI{
   var _instructionDetails;

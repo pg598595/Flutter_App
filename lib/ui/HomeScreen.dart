@@ -1,7 +1,7 @@
-import 'package:flutterdemoapp/ui/WishList.dart';
-import 'package:flutterdemoapp/ui/FeedScreen.dart';
-import 'package:flutterdemoapp/ui/ProfileScreen.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/ui/WishList.dart';
+import 'package:Flavr/ui/FeedScreen.dart';
+import 'package:Flavr/ui/ProfileScreen.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

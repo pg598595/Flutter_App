@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemoapp/model/LoginModel.dart';
-import 'package:flutterdemoapp/ui/HomeScreen.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/model/LoginModel.dart';
+import 'package:Flavr/ui/HomeScreen.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<LoginModel> loginAPI(

@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       var a = prefs.getBool("authenticated");
       if (a == null) {
         SystemChannels.textInput.invokeMethod('TextInput.hide');
-        Navigator.of(context).pushReplacementNamed('/LoginScreen');
+        Navigator.of(context).pushReplacementNamed('/OnBoardingPage');
       } else {
         SystemChannels.textInput.invokeMethod('TextInput.hide');
         Navigator.of(context).pushReplacementNamed('/HomeScreen');

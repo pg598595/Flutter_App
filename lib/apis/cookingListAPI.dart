@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 
 Future addcookingListAPI(BuildContext context, int id) async {
   final Constants = CONSTANTS();

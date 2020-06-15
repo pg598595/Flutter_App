@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 
 
 class GetResponse {

@@ -5,8 +5,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemoapp/model/LoginModel.dart';
-import 'package:flutterdemoapp/values/CONSTANTS.dart';
+import 'package:Flavr/model/LoginModel.dart';
+import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:http/http.dart' as http;
 
 import 'getresponse.dart';

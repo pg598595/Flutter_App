@@ -48,10 +48,10 @@ class CONSTANTS{
   var FORGETPASSWORD = "Forgot your password?";
 
 
-  var HINTEMAIL = "Your Email";
+  var HINTEMAIL = "Enter Email";
   var ERROREMAIL = "Please Enter Valid Email";
 
-  var HINTPASSWORD = "Password";
+  var HINTPASSWORD = "Enter Password";
   var ERRORPASSWORD = "Please Enter Password";
 
   var APPTITLEHOME = "Home";
