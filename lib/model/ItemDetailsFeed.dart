@@ -16,7 +16,7 @@ class ItemDetailsFeed with ChangeNotifier {
       name = "default";
     }
     if (photo == null) {
-      photo = "https://media.giphy.com/media/g8rEwOqIStrBC/giphy.gif";
+      photo = "https://cdn.dribbble.com/users/189859/screenshots/3639645/abc.gif";
     }
     if (preparationTime == null) {
       preparationTime = "5";

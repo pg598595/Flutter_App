@@ -89,7 +89,6 @@ class _FeedScreenState extends State<FeedScreen> {
       ),
       appBar: AppBar(
         title: _appBarTitle,
-        centerTitle: true,
         actions: <Widget>[
           new IconButton(
             icon: _searchIcon,

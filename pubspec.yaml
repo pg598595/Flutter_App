@@ -24,19 +24,19 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   shared_preferences: ^0.4.2
-  http: ^0.12.0+2
+  http: ^0.12.1
   url_launcher: ^3.0.3
-  dio: ^2.1.16
+  dio:
   flutter_spinkit: "^4.0.0"
   provider: ^3.1.0
   shimmer: ^1.0.0
   image_picker: ^0.6.1+4
   flutter_tags: ^0.4.3
-  youtube_player: ^3.5.0
+#  youtube_player: ^3.5.0+1
   speech_recognition: ^0.3.0
-  permission: ^0.1.2
-  connectivity: ^0.3.0
-  fluttertoast: ^3.1.3
+  permission: ^0.1.7
+  connectivity: ^0.4.9
+  fluttertoast: ^5.0.1
   introduction_screen: ^1.0.7
 dev_dependencies:
   flutter_test:

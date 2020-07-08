@@ -1,6 +1,6 @@
-import 'package:Flavr/ui/WishList.dart';
 import 'package:Flavr/ui/FeedScreen.dart';
 import 'package:Flavr/ui/ProfileScreen.dart';
+import 'package:Flavr/ui/WishList.dart';
 import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:flutter/material.dart';
 
@@ -36,18 +36,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        backgroundColor: Color.fromARGB(100, 255, 255, 0),
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(Constants.APPTITLEHOME)),
           BottomNavigationBarItem(
-              icon: Icon(Icons.local_dining), title: Text(Constants.APPTITLEWISHLIST)),
+              icon: Icon(Icons.dashboard), title: Text('.')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text(Constants.APPTITLEPROFILE)),
+              icon: Icon(Icons.local_dining), title: Text('.')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), title: Text('.')),
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,

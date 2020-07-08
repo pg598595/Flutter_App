@@ -63,9 +63,9 @@ Future<LoginModel> addRecipeAPI(
 
     photoId = response.toString().substring(41,44);
 
-    FormData formdata = new FormData();
-    formdata.add(Constants.PHOTO, new UploadFileInfo(image, image.path, contentType: ContentType.parse('image/png')));
-    formdata.add(Constants.RECIPEID, photoId);
+    FormData formdata = FormData.fromMap(<String, int>{ Constants.RECIPEID: photoId, });
+//    formdata.add(Constants.PHOTO, new UploadFileInfo(image, image.path, contentType: ContentType.parse('image/png')));
+//    formdata.add(Constants.RECIPEID, photoId);
 
     final responsePhoto = await dio
         .post(Constants.PHOTOURLAPI,data: formdata, options: Options(headers: map))

@@ -8,8 +8,8 @@ import 'package:Flavr/values/CONSTANTS.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:share/share.dart';
-import 'package:youtube_player/youtube_player.dart';
+//import 'package:share/share.dart';
+//import 'package:youtube_player/youtube_player.dart';
 
 class DetailScreen extends StatefulWidget {
   int index;
@@ -36,14 +36,14 @@ class _DetailScreenState extends State<DetailScreen> {
 
   var _feedDetails = <IngredientsDetailsFeed>[];
   var _instructionDetails = <InstructionDetailsFeed>[];
-  VideoPlayerController _videoController;
+//  VideoPlayerController _videoController;
   var isPlaying = false;
 
   Widget _noDataFound() {
 
     return Padding(
       padding: EdgeInsets.all(10.0),
-      child: Text(Constants.NODATAFOUND,textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0),),
+      child: Text(Constants.NODATAFOUND,textAlign: TextAlign.center,style: TextStyle(fontSize: 20.0)),
     );
   }
 
@@ -54,15 +54,12 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.black,
               title: Text(list[data].getName().toUpperCase(),
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 16.0,
                   )),
               expandedHeight: 200.0,
@@ -83,36 +80,36 @@ class _DetailScreenState extends State<DetailScreen> {
                   children: <Widget>[
                     Card(
                       color: Colors.white,
-                      child: list[data].youtubeUrl == ""
-                          ? Image.network(
+                      child:
+                          Image.network(
                               list[data].photo,
                               fit: BoxFit.fill,
                               width: double.infinity,
                             )
-                          : Stack(
-                              children: <Widget>[
-                                YoutubePlayer(
-                                  context: context,
-                                  controlsColor: ControlsColor(
-                                      buttonColor: Colors.amber,
-                                      playPauseColor: Colors.red,
-                                      progressBarBackgroundColor: Colors.pink,
-                                      seekBarPlayedColor: Colors.white),
-                                  source: list[data].youtubeUrl,
-                                  quality: YoutubeQuality.MEDIUM,
-                                  loop: true,
-                                  autoPlay: false,
-                                  hideShareButton: true,
-                                  showThumbnail: true,
-                                  startFullScreen: false,
-                                  showVideoProgressbar: true,
-                                  keepScreenOn: false,
-                                  callbackController: (controller) {
-                                    _videoController = controller;
-                                  },
-                                ),
-                              ],
-                            ),
+//                          : Stack(
+//                              children: <Widget>[
+//                                YoutubePlayer(
+//                                  context: context,
+//                                  controlsColor: ControlsColor(
+//                                      buttonColor: Colors.amber,
+//                                      playPauseColor: Colors.red,
+//                                      progressBarBackgroundColor: Colors.pink,
+//                                      seekBarPlayedColor: Colors.white),
+//                                  source: list[data].youtubeUrl,
+//                                  quality: YoutubeQuality.MEDIUM,
+//                                  loop: true,
+//                                  autoPlay: false,
+//                                  hideShareButton: true,
+//                                  showThumbnail: true,
+//                                  startFullScreen: false,
+//                                  showVideoProgressbar: true,
+//                                  keepScreenOn: false,
+//                                  callbackController: (controller) {
+//                                    _videoController = controller;
+//                                  },
+//                                ),
+//                              ],
+//                            ),
                     ),
                   ],
                 ),
@@ -221,7 +218,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
                 Container(
-                  color: Colors.white,
                   child: FutureBuilder<dynamic>(
                     key: login_state,
                     future: _loadData(),
@@ -272,7 +268,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
                 Container(
-                  color: Colors.white,
                   child: FutureBuilder<dynamic>(
                     future: _loadInstruction(),
                     builder: (context, snapshot) {
@@ -360,17 +355,17 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   void _shareRecipe() {
-    if (list[data].youtubeUrl == "") {
-      Share.share("Recipe : ${list[data].name}\n"
-          "${Constants.HINTSERVES} : ${list[data].serves}\n"
-          "${Constants.HINTTIME}: ${list[data].preparationTime}\n"
-          "${Constants.COMPLEXITY} : ${list[data].complexity}\n");
-    } else {
-      Share.share("Recipe : ${list[data].name}\n"
-          "${Constants.HINTSERVES} : ${list[data].serves}\n"
-          "${Constants.HINTTIME} : ${list[data].preparationTime}\n"
-          "${Constants.COMPLEXITY} : ${list[data].complexity}\n"
-          "${Constants.TEXTYOUTUBELINK}: ${list[data].youtubeUrl}");
-    }
+//    if (list[data].youtubeUrl == "") {
+//      Share.share("Recipe : ${list[data].name}\n"
+//          "${Constants.HINTSERVES} : ${list[data].serves}\n"
+//          "${Constants.HINTTIME}: ${list[data].preparationTime}\n"
+//          "${Constants.COMPLEXITY} : ${list[data].complexity}\n");
+//    } else {
+//      Share.share("Recipe : ${list[data].name}\n"
+//          "${Constants.HINTSERVES} : ${list[data].serves}\n"
+//          "${Constants.HINTTIME} : ${list[data].preparationTime}\n"
+//          "${Constants.COMPLEXITY} : ${list[data].complexity}\n"
+//          "${Constants.TEXTYOUTUBELINK}: ${list[data].youtubeUrl}");
+//    }
   }
 }
