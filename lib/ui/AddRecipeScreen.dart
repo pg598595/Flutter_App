@@ -440,13 +440,13 @@ class _DiningScreen extends State<AddRecipeScreen> {
         },
         child: Scaffold(
             appBar: AppBar(
-              leading: IconButton(
-                  icon: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    _moveToHomeScreen(context);
-                  }),
+//              leading: IconButton(
+//                  icon: Icon(Icons.arrow_back),
+//                  onPressed: () {
+//                    _moveToHomeScreen(context);
+//                  }),
               title: new Text(Constansts.APPTITLEADDRECIPE),
-              centerTitle: true,
+//              centerTitle: true,
             ),
             resizeToAvoidBottomPadding: false,
             body: new SingleChildScrollView(
@@ -472,7 +472,7 @@ class _DiningScreen extends State<AddRecipeScreen> {
                                 borderRadius: new BorderRadius.circular(10.0)),
                             onPressed: imageSelectorGallery,
                             child: Text(Constansts.SELECTIMAGE),
-                            textColor: Colors.white,
+
                           )
                         ],
                       ),

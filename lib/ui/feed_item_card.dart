@@ -51,7 +51,7 @@ class FeedItemCard extends StatelessWidget {
               height: 136,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
-                color: itemIndex.isEven ? Color(0xFFAD3DF7) : Color(0xFF8E1212),
+                color: itemIndex.isEven ? Colors.amber[900] : Colors.pink,
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 15),
@@ -115,7 +115,7 @@ class FeedItemCard extends StatelessWidget {
                         vertical: 20 / 4, // 5 top and bottom
                       ),
                       decoration: BoxDecoration(
-                        color: itemIndex.isEven ? Color(0xFF8E1212) : Color(0xFFAD3DF7),
+                        color: itemIndex.isEven ? Colors.pink : Colors.amber[900],
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(22),
                           topRight: Radius.circular(22),

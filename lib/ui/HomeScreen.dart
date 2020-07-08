@@ -1,3 +1,4 @@
+import 'package:Flavr/ui/AddRecipeScreen.dart';
 import 'package:Flavr/ui/FeedScreen.dart';
 import 'package:Flavr/ui/ProfileScreen.dart';
 import 'package:Flavr/ui/WishList.dart';
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String appBarTitleText = 'Home';
   final widgetOptions = [
     new FeedScreen(),
+    new AddRecipeScreen(),
     new WishList(),
     new ProfileScreen(),
   ];
@@ -46,11 +48,15 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard), title: Text('.')),
           BottomNavigationBarItem(
+              icon: Icon(Icons.add), title: Text('.')),
+          BottomNavigationBarItem(
               icon: Icon(Icons.local_dining), title: Text('.')),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle), title: Text('.')),
         ],
         currentIndex: selectedIndex,
+        selectedItemColor: Colors.amber[900],
+        unselectedItemColor: Colors.pink,
         onTap: onItemTapped,
       ),
     );
@@ -59,9 +65,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void onItemTapped(int index) {
     if (index == 0) {
       appBarTitleText = Constants.APPTITLEHOME;
-    } else if (index == 1) {
+    }  else if (index == 1) {
+      appBarTitleText = Constants.APPTITLEADDRECIPE;
+    }
+    else if (index == 2) {
       appBarTitleText = Constants.APPTITLEWISHLIST;
-    } else if (index == 2) {
+    } else if (index == 3) {
       //appBarTitleText = 'Favourites';
       appBarTitleText = Constants.APPTITLEPROFILE;
     }

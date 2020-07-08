@@ -7,6 +7,7 @@ import 'package:Flavr/ui/HomeScreen.dart';
 import 'package:Flavr/ui/LoginScreen.dart';
 import 'package:Flavr/ui/SplashScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'IntroductionScreen.dart';
@@ -24,23 +25,13 @@ class MyApp extends StatelessWidget {
       ],
       child: new MaterialApp(
         title: "MyRecipes",
-        themeMode: ThemeMode.system,
-        darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: Color.fromRGBO(32, 33, 36, 1.0),
-            appBarTheme: AppBarTheme(),
-            primarySwatch: Colors.blue,
-            primaryColor: Color.fromRGBO(48, 49, 52, 1.0),
-            accentColor: Color(int.parse('0xff2399CC')),
-            iconTheme: IconThemeData(color: Colors.black)),
-        theme:  ThemeData(
-            brightness: Brightness.light,
-            scaffoldBackgroundColor: Color.fromRGBO(32, 33, 36, 1.0),
-            appBarTheme: AppBarTheme(),
-            primarySwatch: Colors.pink,
-            primaryColor: Color.fromRGBO(48, 49, 52, 1.0),
-            accentColor: Color(int.parse('0xff2399CC')),
-            iconTheme: IconThemeData(color: Colors.white)),
+        theme: ThemeData(
+          // We set Poppins as our default font
+          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+          primaryColor: Color(0xFF035AA6),
+          accentColor: Color(0xFF035AA6),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/OnBoardingPage": (BuildContext context) => OnBoardingPage(),

@@ -38,6 +38,7 @@ dependencies:
   connectivity: ^0.4.9
   fluttertoast: ^5.0.1
   introduction_screen: ^1.0.7
+  google_fonts: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
