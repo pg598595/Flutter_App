@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:Flavr/apis/cookingListAPI.dart';
 import 'package:Flavr/model/ItemDetailsFeed.dart';
+import 'package:Flavr/ui/DetailScreen.dart';
 import 'package:Flavr/ui/Skelton.dart';
+import 'package:Flavr/ui/feed_item_card.dart';
 import 'package:Flavr/utils/CustomNavigation.dart';
 import 'package:Flavr/utils/Permissions.dart';
 import 'package:Flavr/values/CONSTANTS.dart';
@@ -254,166 +256,174 @@ class _FeedScreenState extends State<FeedScreen> {
     }
     return new ListView.builder(
       itemCount: filteredNames.length,
-      itemBuilder: (BuildContext context, int index) {
-        if (filteredNames.length == 0) {
-          return Scaffold(
-            body: new FadeInImage.assetNetwork(
-              placeholder: 'images/notFound.gif',
-              image: filteredNames[index].photo,
-              fit: BoxFit.fitWidth,
-              width: double.infinity,
-              height: 175,
-            ),
-          );
-        } else
-          return GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            child: SingleChildScrollView(
-              child: new ListTile(
-                onTap: () {
-                  navigateToSubPage(
+      itemBuilder: (context, index) => FeedItemCard(
+        itemIndex: index,
+        product: filteredNames[index],
+        press: () {
+          navigateToSubPage(
                       context, index, filteredNames);
-                },
-                title: new Card(
-                  margin: EdgeInsets.only(left: 0, right: 0, top: 5),
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      new Stack(
-                        children: <Widget>[
-                          new FadeInImage.assetNetwork(
-                            placeholder: 'images/loaderfood.gif',
-                            image: filteredNames[index].photo,
-                            fit: BoxFit.fitWidth,
-                            width: double.infinity,
-                            height: 200,
-                          ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100.0),
-                            ),
-                            color: Colors.white,
-                            child: IconButton(
-                              alignment: Alignment.center,
-                              icon: Icon(
-                                  _feedDetails[index].like
-                                      ? Icons.favorite
-                                      : Icons.favorite_border,
-                                  color: _feedDetails[index].like
-                                      ? Colors.red
-                                      : Colors.grey),
-                              onPressed: () {
-                                _feedDetails[index].like =
-                                    !_feedDetails[index].like;
-                                if (_feedDetails[index].like == true) {
-                                  counterProvider.likeUpdate(true);
-                                  addcookingListAPI(
-                                      context, filteredNames[index].recipeId);
-                                }
-                                if (_feedDetails[index].like == false) {
-                                  counterProvider.likeUpdate(false);
-
-                                  removeCookingListAPI(
-                                      context, filteredNames[index].recipeId);
-                                }
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25.0, top: 10),
-                        child: new Text(filteredNames[index].name,
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12.0)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25.0, top: 5),
-                        child: new Text(filteredNames[index].name,
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18.0)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, bottom: 15),
-                        child: new Row(
-                          children: <Widget>[
-                            Expanded(
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.access_time,
-                                      color: Colors.grey,
-                                    ),
-                                    Text(
-                                      filteredNames[index].preparationTime,
-                                      style: TextStyle(
-                                          fontSize: 15.0, color: Colors.grey),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.library_books,
-                                      color: Colors.grey,
-                                    ),
-                                    Text(
-                                      filteredNames[index].complexity,
-                                      style: TextStyle(
-                                          fontSize: 15.0, color: Colors.grey),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.local_dining,
-                                      color: Colors.grey,
-                                    ),
-                                    Text(
-                                      "${filteredNames[index].serves} ${Constants.TEXTPEOPLE}",
-                                      style: TextStyle(
-                                          fontSize: 15.0, color: Colors.grey),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-      },
+        },
+      ),
+//      itemBuilder: (BuildContext context, int index) {
+//        if (filteredNames.length == 0) {
+//          return Scaffold(
+//            body: new FadeInImage.assetNetwork(
+//              placeholder: 'images/notFound.gif',
+//              image: filteredNames[index].photo,
+//              fit: BoxFit.fitWidth,
+//              width: double.infinity,
+//              height: 175,
+//            ),
+//          );
+//        } else
+//          return GestureDetector(
+//            behavior: HitTestBehavior.opaque,
+//            child: SingleChildScrollView(
+//              child: new ListTile(
+//                onTap: () {
+//                  navigateToSubPage(
+//                      context, index, filteredNames);
+//                },
+//                title: new Card(
+//                  margin: EdgeInsets.only(left: 0, right: 0, top: 5),
+//                  elevation: 3,
+//                  shape: RoundedRectangleBorder(
+//                    borderRadius: BorderRadius.circular(10.0),
+//                  ),
+//                  child: new Column(
+//                    crossAxisAlignment: CrossAxisAlignment.start,
+//                    children: <Widget>[
+//                      new Stack(
+//                        children: <Widget>[
+//                          new FadeInImage.assetNetwork(
+//                            placeholder: 'images/loaderfood.gif',
+//                            image: filteredNames[index].photo,
+//                            fit: BoxFit.fitWidth,
+//                            width: double.infinity,
+//                            height: 200,
+//                          ),
+//                          Card(
+//                            shape: RoundedRectangleBorder(
+//                              borderRadius: BorderRadius.circular(100.0),
+//                            ),
+//                            color: Colors.white,
+//                            child: IconButton(
+//                              alignment: Alignment.center,
+//                              icon: Icon(
+//                                  _feedDetails[index].like
+//                                      ? Icons.favorite
+//                                      : Icons.favorite_border,
+//                                  color: _feedDetails[index].like
+//                                      ? Colors.red
+//                                      : Colors.grey),
+//                              onPressed: () {
+//                                _feedDetails[index].like =
+//                                    !_feedDetails[index].like;
+//                                if (_feedDetails[index].like == true) {
+//                                  counterProvider.likeUpdate(true);
+//                                  addcookingListAPI(
+//                                      context, filteredNames[index].recipeId);
+//                                }
+//                                if (_feedDetails[index].like == false) {
+//                                  counterProvider.likeUpdate(false);
+//
+//                                  removeCookingListAPI(
+//                                      context, filteredNames[index].recipeId);
+//                                }
+//                              },
+//                            ),
+//                          ),
+//                        ],
+//                      ),
+//                      Padding(
+//                        padding: const EdgeInsets.only(left: 25.0, top: 10),
+//                        child: new Text(filteredNames[index].name,
+//                            textAlign: TextAlign.start,
+//                            style: TextStyle(
+//                                color: Colors.grey,
+//                                fontWeight: FontWeight.bold,
+//                                fontSize: 12.0)),
+//                      ),
+//                      Padding(
+//                        padding: const EdgeInsets.only(left: 25.0, top: 5),
+//                        child: new Text(filteredNames[index].name,
+//                            textAlign: TextAlign.start,
+//                            style: TextStyle(
+//                                color: Colors.black54,
+//                                fontWeight: FontWeight.bold,
+//                                fontSize: 18.0)),
+//                      ),
+//                      Padding(
+//                        padding: const EdgeInsets.only(top: 10, bottom: 15),
+//                        child: new Row(
+//                          children: <Widget>[
+//                            Expanded(
+//                              child: Container(
+//                                child: Row(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.center,
+//                                  children: <Widget>[
+//                                    Icon(
+//                                      Icons.access_time,
+//                                      color: Colors.grey,
+//                                    ),
+//                                    Text(
+//                                      filteredNames[index].preparationTime,
+//                                      style: TextStyle(
+//                                          fontSize: 15.0, color: Colors.grey),
+//                                    )
+//                                  ],
+//                                ),
+//                              ),
+//                            ),
+//                            Expanded(
+//                              child: Container(
+//                                child: Row(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.center,
+//                                  children: <Widget>[
+//                                    Icon(
+//                                      Icons.library_books,
+//                                      color: Colors.grey,
+//                                    ),
+//                                    Text(
+//                                      filteredNames[index].complexity,
+//                                      style: TextStyle(
+//                                          fontSize: 15.0, color: Colors.grey),
+//                                    )
+//                                  ],
+//                                ),
+//                              ),
+//                            ),
+//                            Expanded(
+//                              child: Container(
+//                                child: Row(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.center,
+//                                  children: <Widget>[
+//                                    Icon(
+//                                      Icons.local_dining,
+//                                      color: Colors.grey,
+//                                    ),
+//                                    Text(
+//                                      "${filteredNames[index].serves} ${Constants.TEXTPEOPLE}",
+//                                      style: TextStyle(
+//                                          fontSize: 15.0, color: Colors.grey),
+//                                    )
+//                                  ],
+//                                ),
+//                              ),
+//                            ),
+//                          ],
+//                        ),
+//                      ),
+//                    ],
+//                  ),
+//                ),
+//              ),
+//            ),
+//          );
+//      },
     );
   }
 

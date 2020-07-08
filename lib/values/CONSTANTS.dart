@@ -1,3 +1,8 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class CONSTANTS{
 
 
@@ -110,5 +115,23 @@ class CONSTANTS{
   var CONNECTIONONLINE = "Online";
   var CONNECTIONOFFLINE = "Offline";
   var LIVE = "LIVE";
+
+  // list of colors that we use in our app
+  var kBackgroundColor = Color(0xFFF1EFF1);
+  var kPrimaryColor = Color(0xFF035AA6);
+  var kSecondaryColor = Color(0xFFFFA41B);
+  var kTextColor = Color(0xFF000839);
+  var kTextLightColor = Color(0xFF747474);
+  var kBlueColor = Color(0xFF40BAD5);
+
+  var kDefaultPadding = 20.0;
+
+// our default Shadow
+  var kDefaultShadow = BoxShadow(
+    offset: Offset(0, 15),
+    blurRadius: 27,
+    color: Colors.black12, // Black color with 12% opacity
+  );
+
 
 }

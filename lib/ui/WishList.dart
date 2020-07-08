@@ -74,7 +74,6 @@ class _WishListState extends State<WishList> {
     return new Scaffold(
       appBar: AppBar(
         title: new Text(Constants.APPTITLEWISHLIST),
-        centerTitle: true,
         actions: <Widget>[
           new IconButton(
             icon: _searchIcon,
