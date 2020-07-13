@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           // We set Poppins as our default font
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
-          primaryColor: Color(0xFF035AA6),
-          accentColor: Color(0xFF035AA6),
+          primaryColor: Colors.pink,
+          accentColor: Colors.pink,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,

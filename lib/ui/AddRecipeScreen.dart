@@ -467,7 +467,7 @@ class _DiningScreen extends State<AddRecipeScreen> {
                         children: <Widget>[
                           displaySelectedFile(galleryFile),
                           RaisedButton(
-                            color: Colors.black,
+                            color: Colors.pink,
                             shape: RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(10.0)),
                             onPressed: imageSelectorGallery,
@@ -517,7 +517,7 @@ class _DiningScreen extends State<AddRecipeScreen> {
                           },
                           child: Text(Constansts.TEXTADDRECIPE),
                           textColor: Colors.white,
-                          color: Colors.black,
+                          color: Colors.pink,
                         ),
                       ),
                     ),

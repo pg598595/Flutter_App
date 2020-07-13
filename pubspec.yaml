@@ -64,6 +64,7 @@ flutter:
     - images/juice.jpeg
     - images/carrot.jpeg
     - images/icecream.jpeg
+    - images/person.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

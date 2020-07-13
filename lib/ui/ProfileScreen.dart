@@ -52,7 +52,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _connectionStatus = Constants.LIVE;
       });
     });
-
   }
 
   @override
@@ -65,9 +64,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return new Form(
         child: new Column(
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 5.0),
-          child: displaySelectedFile(galleryFile),
+        Stack(
+          children: <Widget>[
+            // Our background
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: displaySelectedFile(galleryFile),
+            ),
+            FloatingActionButton(
+              onPressed: imageSelectorGallery,
+              backgroundColor: Colors.pink,
+
+              tooltip: Constants.SELECTIMAGE,
+              child: new Icon(
+                Icons.add_a_photo,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10.0),
@@ -145,28 +159,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Text(
-                    Constants.TEXTHELLO,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                        fontSize: 30.0),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: Text(
-                    Constants.TEXTAPPDEC,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                        fontSize: 20.0),
-                  ),
-                ),
+//                Padding(
+//                  padding: const EdgeInsets.only(top: 20.0),
+//                  child: Text(
+//                    Constants.TEXTHELLO,
+//                    textAlign: TextAlign.center,
+//                    style: TextStyle(
+//                        fontWeight: FontWeight.w600,
+//                        color: Colors.black,
+//                        fontSize: 30.0),
+//                  ),
+//                ),
+//                Padding(
+//                  padding: const EdgeInsets.only(top: 5.0),
+//                  child: Text(
+//                    Constants.TEXTAPPDEC,
+//                    textAlign: TextAlign.center,
+//                    style: TextStyle(
+//                        fontWeight: FontWeight.w600,
+//                        color: Colors.black,
+//                        fontSize: 20.0),
+//                  ),
+//                ),
                 _buildTextFields(),
                 Padding(
                   padding:
@@ -175,7 +189,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     width: double.infinity,
                     height: 50.00,
                     child: RaisedButton(
-                      color: Colors.black,
+                      color: Colors.pink,
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10.0)),
                       onPressed: () {
@@ -196,15 +210,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          floatingActionButton: new FloatingActionButton(
-            onPressed: imageSelectorGallery,
-            backgroundColor: Colors.black,
-            tooltip: Constants.SELECTIMAGE,
-            child: new Icon(
-              Icons.add_a_photo,
-              color: Colors.white,
-            ),
-          ),
+
         ));
   }
 
@@ -277,7 +283,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         width: 200.0,
         child: file == null
             ? new CircleAvatar(
-                backgroundImage: new AssetImage('images/profile.png'),
+                backgroundImage: new AssetImage('images/person.png'),
                 radius: 200.0,
               )
             : new CircleAvatar(
