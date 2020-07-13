@@ -1,16 +1,43 @@
-# Flavr
+# Flutter Demo App
 
-A new Flutter application.
+<br>
 
-## Getting Started
+App Name : FLAVR
+<br>
 
-This project is a starting point for a Flutter application.
+Splash Screen.<br>
+Login with API.<br>
+Listing Recipes.<br>
+Details Screen.<br>
+Search Recipes.<br>
+Profile Screen.<br>
+Add New Recipe with API.<br>
+Image Upload in API.<br>
+Platform Support: Android & IOS.<br>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### A Glance
+<img align="left" src="https://user-images.githubusercontent.com/25722093/87274743-1e73e000-c4fa-11ea-9272-fe4338bd048a.png" width=270 height=500>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img align="right" src="https://user-images.githubusercontent.com/25722093/87274800-3fd4cc00-c4fa-11ea-919d-4ae3b1a29870.png" width=270 height=500>
+
+<img align="middle" src="https://user-images.githubusercontent.com/25722093/87274772-3186b000-c4fa-11ea-9fc8-fda0007d0730.png" width=270 height=500>
+
+
+
+<img align="left" src="https://user-images.githubusercontent.com/25722093/87274817-4bc08e00-c4fa-11ea-95b5-7cf557319567.png" width=270 height=500>
+
+<img align="right" src="https://user-images.githubusercontent.com/25722093/87274855-672b9900-c4fa-11ea-9c86-a9b6a653d4f4.png" width=270 height=500>
+
+<img align="middle" src="https://user-images.githubusercontent.com/25722093/87274843-5a0eaa00-c4fa-11ea-860a-e1e3d1747a6b.png" width=270 height=500>
+
+
+
+<img align="left" src="https://user-images.githubusercontent.com/25722093/87274874-77dc0f00-c4fa-11ea-9bd7-a24648aa10ae.png" width=270 height=500>
+
+<img align="middle" src="https://user-images.githubusercontent.com/25722093/87274895-84f8fe00-c4fa-11ea-91fe-5b7a24e8e368.png" width=270 height=500>
+
+
+
+
+
