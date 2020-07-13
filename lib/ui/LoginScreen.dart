@@ -127,7 +127,7 @@ class LoginScreenState extends State<LoginScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                            color: Colors.pink,
                             fontSize: 30.0),
                       ),
                     ),
@@ -138,7 +138,7 @@ class LoginScreenState extends State<LoginScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                            color: Colors.pink,
                             fontSize: 15.0),
                       ),
                     ),
@@ -160,7 +160,7 @@ class LoginScreenState extends State<LoginScreen> {
                             }
                           },
                           child: Text(Constansts.STRINGLOGIN),
-                          color: Colors.black,
+                          color: Colors.pink,
                           textColor: Colors.white,
                         ),
                       ),
@@ -169,7 +169,7 @@ class LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(top: 20,bottom: 40),
                       child: Text(
                         Constansts.FORGETPASSWORD,
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.orange),
                       ),
                     ),
                   ],
